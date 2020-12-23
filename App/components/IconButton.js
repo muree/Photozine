@@ -10,7 +10,7 @@ export default function IconButton({name, style, onPress}) {
     <TouchableOpacity
     style={[styles.container, style]}
     onPress={onPress}>
-   <Ionicons name="close-circle-outline" size={25} color="#c22d35"/>
+   <Ionicons name="close-circle-outline" size={27} color="#c22d35"/>
    
     </TouchableOpacity>
   );

@@ -12,8 +12,6 @@ export default function HomeButton({name, style, onPress}) {
     style={[styles.container, style]}
     onPress={onPress}>
  <FontAwesome name="home" size={26} color="yellow" />
-  
-   
     </TouchableOpacity>
   );
 }

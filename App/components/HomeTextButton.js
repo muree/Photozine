@@ -2,7 +2,7 @@ import React from 'react';
 import {StyleSheet, Text, TouchableOpacity} from 'react-native';
 
 
-export default function TextButton({title, style, onPress}) {
+export default function HomeTextButton({title, style, onPress}) {
   
 
   return (
@@ -24,8 +24,8 @@ const styles = StyleSheet.create({
     borderRadius: 10,
   },
   text: {
-    color: '#2c44c2',
-    fontWeight: '500',
-    fontSize: 14,
+    color: '#fbb156',
+    fontWeight: '600',
+    fontSize: 20,
   },
 });

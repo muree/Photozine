@@ -4,6 +4,8 @@ import { ScrollView } from 'react-native-gesture-handler'
 import Heading from '../components/Heading'
 import HomeButton from '../components/HomeButton'
 import { Dimensions } from 'react-native';
+import Lightbox from 'react-native-lightbox';
+
 // map function of array objects
 const images=[
     {
@@ -23,17 +25,21 @@ const images=[
         uri: 'https://res.cloudinary.com/mureebaba/image/upload/v1608042167/photozine/IMG_1520_uos4o2.jpg',
     },
 ]
-export default function GalleryScreen({navgation}) {
+const WINDOW_WIDTH = Dimensions.get('window').width;
+const BASE_PADDING = 10;
+
+export default function GalleryScreen({navigation}) {
     return (
         
-        <ScrollView>
+        
         <View style={styles.container}>
-            <Heading>Gallery</Heading>
+            <Heading style={styles.head}>Gallery</Heading>
             <HomeButton style={styles.homeIcon} onPress={() => {
                 navigation.navigate('Home')
             }}/>
-            {images.map(image => (
-                <TouchableOpacity>
+        <ScrollView>
+            {images.map(image => ( 
+            <Lightbox underlayColor='white'>   
                 <Image
                     style={styles.logo}
                     source={{
@@ -42,12 +48,12 @@ export default function GalleryScreen({navgation}) {
             }}
             onPress={() => {}}    
             />
-            </TouchableOpacity>
-            ))}
-          
-     
+            </Lightbox>  
+))}
+           </ScrollView>
+         
         </View>
-        </ScrollView>
+       
     )
 } 
 const styles = StyleSheet.create({
@@ -70,5 +76,9 @@ const styles = StyleSheet.create({
         right:30,
         
 
+      },
+      head:{
+        fontSize: 32,
+        color:'yellow',
       }
 })
